@@ -20,7 +20,7 @@ app.post('/submit-form', (req, res) => {
     }
 
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: 'gmail',git commit
         auth: {
             user: 'your-email@gmail.com', // Your Gmail email address
             pass: 'your-password' // Your Gmail password (not recommended for production)
