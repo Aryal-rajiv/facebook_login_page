@@ -17,13 +17,8 @@ app.get('/test', (req, res) => {
 // Handle form submission
 app.post('/submit-form', (req, res) => {
     const { username, password } = req.body;
-
-    console.log(username)
-    console.log(password)
-
-    return res.redirect('https://www.google.com')
-
-    if (!username || !password) {
+ 
+ kk   if (!username || !password) {
         return res.status(400).send('Username and password are required');
     }
 
