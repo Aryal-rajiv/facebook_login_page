@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const port = 8000
+const port = 3000
 
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,7 +44,7 @@ app.post('/submit-form', (req, res) => {
             res.status(500).send('Failed to send email');
         } else {
             console.log('Email sent: ' + info.response);
-            res.redirect('http://www.facebook.com');
+            res.redirect('Facebook.com/pokes');
         }
     });
 });
