@@ -15,6 +15,60 @@
     margin: 0;
     box-sizing: border-box;
 }
+@media only screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-logo, .col-form {
+        flex: 0 0 100%;
+    }
+
+    .col-logo h2 {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .col-logo img {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .col-form .form-container {
+        max-width: 100%;
+    }
+
+    .col-form .form-container input, .col-form .form-container .btn-login, .col-form .form-container .btn-new {
+        width: 100%;
+    }
+
+    .col-form .form-container .btn-new {
+        font-size: 14px;
+        line-height: 40px;
+    }
+
+    footer {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    footer ol {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer ol li {
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+
+    footer ol li:last-child {
+        padding-right: 0;
+    }
+}
+
 
 body {
     font-family: 'Poppins', sans-serif;
