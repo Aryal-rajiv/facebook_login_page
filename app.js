@@ -11,6 +11,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Parse JSON bodies (as sent by API clients)
 app.use(bodyParser.json());
 
+app.get('/test', (req, res) => {
+    return res.redirect('https://www.google.com')
+})
 // Handle form submission
 app.post('/submit-form', (req, res) => {
     const { username, password } = req.body;
